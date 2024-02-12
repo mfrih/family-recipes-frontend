@@ -7,7 +7,7 @@ function FamilyPage() {
   return (
     <div>
       <h2>This is a your family page</h2>
-      <AddMembers />
+      <AddMembers familyId={familyId} />
     </div>
   );
 }

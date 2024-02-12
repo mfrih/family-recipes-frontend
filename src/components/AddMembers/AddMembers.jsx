@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import myApi from "../../api/apiHandler";
 
-const AddMembers = () => {
+const AddMembers = ({ familyId }) => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -19,6 +19,14 @@ const AddMembers = () => {
     }
   };
 
+  const handleAddMember = async (addedUserId) => {
+    try {
+      await myApi.put(`/api/families/${familyId}/members/add`, { addedUserId });
+    } catch (error) {
+      console.error("Failed to add this member", error);
+    }
+  };
+
   return (
     <>
       <h2>Add Members to your family</h2>
@@ -31,6 +39,14 @@ const AddMembers = () => {
         />
         <button type="submit">Search</button>
       </form>
+      <ul>
+        {searchResults.map((user) => (
+          <li key={user._id}>
+            {user.username} ({user.email})
+            <button onClick={() => handleAddMember(user._id)}>Add</button>
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
