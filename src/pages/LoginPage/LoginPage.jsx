@@ -25,7 +25,7 @@ const LoginPage = () => {
       const authToken = response.data.authToken;
       localStorage.setItem("authToken", authToken);
       await authenticateUser();
-      navigate("/");
+      navigate("/welcome");
     } catch (error) {
       console.error("Error logging in", error);
     }

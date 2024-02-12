@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const API_URL = "http://localhost:5005";
 
@@ -11,6 +12,9 @@ const AuthProviderWrapper = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState(null);
+
+  // adds use navigate to be used in the logOutUser function later on
+  const navigate = useNavigate();
 
   // 3 : functions handling authentication logic
   //function that stores the token
@@ -70,6 +74,7 @@ const AuthProviderWrapper = ({ children }) => {
     setIsLoggedIn(false);
     setUser(null);
     removeToken();
+    navigate("/");
   };
 
   return (
