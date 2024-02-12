@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import myApi from "../../api/apiHandler";
 
 const UserMainPage = () => {
-  const [families, setFamilies] = useState([]);
-  const [recipes, setRecipes] = useState([]);
+  const [families, setFamilies] = useState(null);
+  const [recipes, setRecipes] = useState(null);
   const { user } = useContext(AuthContext);
 
   const fetchFamilies = async () => {
@@ -29,14 +29,9 @@ const UserMainPage = () => {
   useEffect(() => {
     fetchFamilies();
     fetchRecipes();
-    [];
-  });
+  }, []);
 
-  if (!families) {
-    return <p>Loading...</p>;
-  }
-
-  if (!recipes) {
+  if (!families || !recipes) {
     return <p>Loading...</p>;
   }
 

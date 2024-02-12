@@ -3,7 +3,7 @@ import React from "react";
 function FamilyPage() {
   return (
     <div>
-      <div>FamilyPage</div>
+      <div>This is a oneFamily Page</div>
     </div>
   );
 }
