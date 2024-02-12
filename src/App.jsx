@@ -8,6 +8,8 @@ import UserMainPage from "./pages/UserMainPage/UserMainPage";
 import FamilyPage from "./pages/FamilyPage/FamilyPage";
 import NavBar from "./components/NavBar/NavBar";
 import AddFamily from "./pages/AddFamily/AddFamily";
+import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
+import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/welcome" element={<UserMainPage />} />
         <Route path="/my-families/:familyId" element={<FamilyPage />} />
         <Route path="/my-families/add" element={<AddFamily />} />
+        <Route path="/my-recipes" element={<MyRecipesPage />} />
+        <Route path="/my-recipes/add" element={<AddRecipePage />} />
       </Routes>
     </>
   );

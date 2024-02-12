@@ -5,31 +5,40 @@ import myApi from "../../api/apiHandler";
 
 const UserMainPage = () => {
   const [families, setFamilies] = useState([]);
-  // const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   const { user } = useContext(AuthContext);
 
   const fetchFamilies = async () => {
     try {
-      const response = await myApi.get(`/api/families/my-families`);
-      setFamilies(response.data);
+      const familyResponse = await myApi.get(`/api/families/my-families`);
+      setFamilies(familyResponse.data);
     } catch (error) {
       console.log("Error fetching families", error);
     }
   };
 
+  const fetchRecipes = async () => {
+    try {
+      const recipeResponse = await myApi.get(`/api/recipes/my-recipes`);
+      setRecipes(recipeResponse.data);
+    } catch (error) {
+      console.log("Error fetching recipes", error);
+    }
+  };
+
   useEffect(() => {
     fetchFamilies();
+    fetchRecipes();
     [];
   });
 
-  // if (families.length === 0) {
-  //   return (
-  //     <>
-  //       <h2>Your Families</h2>
-  //       <p>No families to display</p>
-  //     </>
-  //   );
-  // }
+  if (!families) {
+    return <p>Loading...</p>;
+  }
+
+  if (!recipes) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="UserMainPage">
@@ -47,8 +56,28 @@ const UserMainPage = () => {
               <article key={oneFamily._id}>
                 <p>{oneFamily.name}</p>
                 <Link to={`/my-families/${oneFamily._id}`}>
-                  Access your family recipes...
+                  Access your family recipes and members...
                 </Link>
+              </article>
+            );
+          })
+        )}
+      </div>
+
+      <div className="my-recipes-wrapper">
+        <h2>Your added recipes</h2>
+        <Link to={`/my-recipes/add`}>Create a new recipe</Link>
+        {recipes.length === 0 ? (
+          <p>
+            You haven't created any recipe yet. That would be nice to create one
+            and share it, as we say "sharing is caring"!
+          </p>
+        ) : (
+          recipes.map((oneRecipe) => {
+            return (
+              <article key={oneRecipe._id}>
+                <p>{oneRecipe.name}</p>
+                <p>Servings: {oneRecipe.servings}</p>
               </article>
             );
           })
