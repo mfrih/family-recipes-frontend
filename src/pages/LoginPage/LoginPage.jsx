@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../context/auth.context";
+import { AuthContext } from "../../context/auth.context";
 const API_URL = "http://localhost:5005";
 
 const LoginPage = () => {
@@ -9,7 +9,7 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
-  //   const { authenticateUser } = useContext(AuthContext);
+  const { authenticateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,7 +24,7 @@ const LoginPage = () => {
       const response = await axios.post(`${API_URL}/auth/login`, formState);
       const authToken = response.data.authToken;
       localStorage.setItem("authToken", authToken);
-      //   await authenticateUser();
+      await authenticateUser();
       navigate("/");
     } catch (error) {
       console.error("Error logging in", error);

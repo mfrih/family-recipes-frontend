@@ -22,7 +22,7 @@ const SignUpPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(`${API_URL}/auth/signup`, formState);
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.error("Error signing up", error);
     }
