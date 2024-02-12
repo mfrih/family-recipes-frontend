@@ -17,6 +17,18 @@ const MembersList = ({ familyId }) => {
     fetchMembers();
   }, [familyId]);
 
+  const handleRemoveMember = async (removedUserId) => {
+    try {
+      await myApi.put(`api/families/${familyId}/members/remove`, {
+        removedUserId,
+      });
+      // needs to refetch members to update the members list
+      fetchMembers();
+    } catch (error) {
+      console.error("Failed to remove family member:", error);
+    }
+  };
+
   if (!members) {
     return <p>Loading...</p>;
   }
@@ -27,6 +39,9 @@ const MembersList = ({ familyId }) => {
         {members.map((member) => (
           <li key={member._id}>
             {member.username} ({member.email})
+            <button onClick={() => handleRemoveMember(member._id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
