@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import myApi from "../../api/apiHandler";
 
-const AddMembers = ({ familyId }) => {
+const AddMembers = ({ familyId, isAdmin }) => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -26,6 +26,10 @@ const AddMembers = ({ familyId }) => {
       console.error("Failed to add this member", error);
     }
   };
+
+  if (!isAdmin) {
+    return null;
+  }
 
   return (
     <>
