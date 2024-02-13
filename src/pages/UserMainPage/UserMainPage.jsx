@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../context/auth.context";
 import { Link } from "react-router-dom";
 import myApi from "../../api/apiHandler";
+import "./UserMainPage.css";
 
 const UserMainPage = () => {
   const [families, setFamilies] = useState(null);
@@ -70,10 +71,12 @@ const UserMainPage = () => {
         ) : (
           recipes.map((oneRecipe) => {
             return (
-              <article key={oneRecipe._id}>
-                <p>{oneRecipe.name}</p>
-                <p>Servings: {oneRecipe.servings}</p>
-              </article>
+              <Link to={`/my-recipes/${oneRecipe._id}`}>
+                <article key={oneRecipe._id} className="recipe-card">
+                  <p>{oneRecipe.name}</p>
+                  <p>Servings: {oneRecipe.servings}</p>
+                </article>
+              </Link>
             );
           })
         )}
