@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
+import { useParams, useNavigate } from "react-router-dom";
 import myApi from "../../api/apiHandler";
 
 function OneRecipePage() {
   const [recipe, setRecipe] = useState(null);
   const [familyNames, setFamilyNames] = useState([]);
   const { recipeId } = useParams();
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const fetchRecipe = async () => {
     try {
@@ -35,6 +38,20 @@ function OneRecipePage() {
     fetchRecipe();
   }, [recipeId]);
 
+  const handleDelete = async () => {
+    if (
+      window.confirm(
+        "Are you sure about deleting this recipe? Your family members won't be able to access it anymore"
+      )
+    )
+      try {
+        await myApi.delete(`api/recipes/${recipeId}`);
+        navigate("/my-recipes");
+      } catch (error) {
+        console.error("Failed to delete recipe", error);
+      }
+  };
+
   if (!recipe) {
     return <p>Loading...</p>;
   }
@@ -42,6 +59,9 @@ function OneRecipePage() {
   return (
     <div>
       <h2>{recipe.name}</h2>
+      {user && user._id === recipe.creatorId && (
+        <button onClick={handleDelete}>Delete Recipe</button>
+      )}
       <p>Servings:for {recipe.servings} people</p>
       <div>
         <h4>Ingredients</h4>
