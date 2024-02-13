@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-const API_URL = "http://localhost:5005";
+import myApi from "../api/apiHandler";
 
 //  1 : creates the auth Context object
 export const AuthContext = createContext();
@@ -23,37 +22,21 @@ const AuthProviderWrapper = ({ children }) => {
   };
 
   //function that authenticates user based on token
-  const authenticateUser = () => {
-    // get the stored token from the localStorage
-    const storedToken = localStorage.getItem("authToken");
-    // if there is a token in the localStorage
-    if (storedToken) {
+  const authenticateUser = async () => {
+    try {
+      // get the stored token from the localStorage
+      const storedToken = localStorage.getItem("authToken");
       // verify the token with the server
-      axios
-        .get(`${API_URL}/auth/verify`, {
-          headers: { Authorization: `Bearer ${storedToken}` },
-        })
-        .then((response) => {
-          // if the token is valid,
-          const user = response.data;
-          // update state variables
-          setIsLoggedIn(true);
-          setIsLoading(false);
-          setUser(user);
-        })
-        .catch((error) => {
-          // handle errors (e.g., invalid token)
-          if (error) {
-            setAuthError(error.response.data.message);
-            return;
-          }
-          // if the server send an error response then update state variables
-          setIsLoggedIn(false);
-          setIsLoading(false);
-          setUser(null);
-        });
-    } else {
-      // if there is no token
+      const response = await myApi.get("/auth/verify", {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      });
+      // if the token is valid,
+      const user = response.data;
+      // update state variables
+      setIsLoggedIn(true);
+      setIsLoading(false);
+      setUser(user);
+    } catch (error) {
       setIsLoggedIn(false);
       setIsLoading(false);
       setUser(null);
@@ -74,7 +57,7 @@ const AuthProviderWrapper = ({ children }) => {
     setIsLoggedIn(false);
     setUser(null);
     removeToken();
-    navigate("/");
+    // navigate("/");
   };
 
   return (

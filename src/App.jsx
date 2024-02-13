@@ -11,6 +11,7 @@ import AddFamily from "./pages/AddFamily/AddFamily";
 import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
 import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
 import OneRecipePage from "./pages/OneRecipePage/OneRecipePage";
+import IsAuthenticated from "./components/Routing/IsAuthenticated";
 
 function App() {
   return (
@@ -20,13 +21,15 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
-        {/* create isAuthenticated route */}
-        <Route path="/welcome" element={<UserMainPage />} />
-        <Route path="/my-families/:familyId" element={<FamilyPage />} />
-        <Route path="/my-families/add" element={<AddFamily />} />
-        <Route path="/my-recipes" element={<MyRecipesPage />} />
-        <Route path="/my-recipes/add" element={<AddRecipePage />} />
-        <Route path="/my-recipes/:recipeId" element={<OneRecipePage />} />
+
+        <Route element={<IsAuthenticated />}>
+          <Route path="/welcome" element={<UserMainPage />} />
+          <Route path="/my-families/:familyId" element={<FamilyPage />} />
+          <Route path="/my-families/add" element={<AddFamily />} />
+          <Route path="/my-recipes" element={<MyRecipesPage />} />
+          <Route path="/my-recipes/add" element={<AddRecipePage />} />
+          <Route path="/my-recipes/:recipeId" element={<OneRecipePage />} />
+        </Route>
       </Routes>
     </>
   );
