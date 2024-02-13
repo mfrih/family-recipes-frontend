@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar/NavBar";
 import AddFamily from "./pages/AddFamily/AddFamily";
 import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
 import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
+import OneRecipePage from "./pages/OneRecipePage/OneRecipePage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/my-families/add" element={<AddFamily />} />
         <Route path="/my-recipes" element={<MyRecipesPage />} />
         <Route path="/my-recipes/add" element={<AddRecipePage />} />
+        <Route path="/my-recipes/:recipeId" element={<OneRecipePage />} />
       </Routes>
     </>
   );
