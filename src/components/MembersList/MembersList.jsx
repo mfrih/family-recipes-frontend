@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import myApi from "../../api/apiHandler";
 
-const MembersList = ({ familyId }) => {
+const MembersList = ({ familyId, isAdmin }) => {
   const [members, setMembers] = useState(null);
 
   const fetchMembers = async () => {
@@ -39,9 +39,11 @@ const MembersList = ({ familyId }) => {
         {members.map((member) => (
           <li key={member._id}>
             {member.username} ({member.email})
-            <button onClick={() => handleRemoveMember(member._id)}>
-              Delete
-            </button>
+            {isAdmin && (
+              <button onClick={() => handleRemoveMember(member._id)}>
+                Delete
+              </button>
+            )}
           </li>
         ))}
       </ul>
