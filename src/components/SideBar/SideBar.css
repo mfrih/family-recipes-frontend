@@ -1,0 +1,17 @@
+.SideBar {
+  & aside {
+    position: fixed;
+    top: 7rem;
+    max-width: 300px;
+    background-color: rgb(69, 68, 68);
+    color: whitesmoke;
+    height: calc(100vh - 5rem);
+    padding: 0.25rem 1rem;
+    & ul {
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}

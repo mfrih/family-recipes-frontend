@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import myApi from "../../api/apiHandler";
+import "./RecipeFormPage.css";
 
-const AddRecipePage = () => {
-  const [formState, setFormstate] = useState({
+const RecipeFormPage = ({ type }) => {
+  const [formState, setFormState] = useState({
     name: "",
     servings: "",
     ingredients: "",
     instructions: "",
+    familyId: [],
   });
-
+  const { recipeId } = useParams();
   const [families, setFamilies] = useState([]);
 
   const navigate = useNavigate();
@@ -28,14 +30,34 @@ const AddRecipePage = () => {
     }
   };
 
+  const fetchRecipe = async () => {
+    try {
+      const response = await myApi.get(`api/recipes/${recipeId}`);
+      const recipeData = response.data;
+      console.log(recipeData);
+      setFormState({
+        name: recipeData.name,
+        servings: recipeData.servings,
+        ingredients: recipeData.ingredients,
+        instructions: recipeData.instructions,
+        familyId: recipeData.familyId,
+      });
+    } catch (error) {
+      console.log("Failed to fetch recipe to update it", error);
+    }
+  };
+
   useEffect(() => {
     fetchFamilies();
+    if (type === "update") {
+      fetchRecipe();
+    }
   }, []);
 
   const handleChange = (e) => {
     const key = e.target.id;
     const value = e.target.value;
-    setFormstate({ ...formState, [key]: value });
+    setFormState({ ...formState, [key]: value });
   };
 
   const handleCheckFamily = (id) => {
@@ -60,16 +82,32 @@ const AddRecipePage = () => {
     // append the familyIds array to the formState
     const data = { ...formState, familyId: checkedFamiliesIds };
     try {
-      const response = await myApi.post("/api/recipes", data);
-      navigate(`/my-recipes/${response.data._id}`);
+      if (type === "add") {
+        const addRecipeResponse = await myApi.post("/api/recipes", data);
+        navigate(`/recipes/${addRecipeResponse.data._id}`);
+      } else {
+        const updateRecipeResponse = await myApi.put(
+          `/api/recipes/${recipeId}`,
+          data
+        );
+        navigate(`/recipes/${updateRecipeResponse.data._id}`);
+      }
     } catch (error) {
       console.error("Error whilst creating recipe", error);
     }
   };
 
+  const displayedFamilies = families.map((oneFamily) => {
+    const clone = { ...oneFamily };
+    if (formState.familyId.includes(clone._id)) {
+      clone.checked = true;
+    }
+    return clone;
+  });
+
   return (
-    <div>
-      <h2>Create a new recipe 👩🏾‍🍳</h2>
+    <div className="RecipeFormPage">
+      <h2>{type === "add" ? "Create" : "Update"} a new recipe 👩🏾‍🍳</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -107,7 +145,7 @@ const AddRecipePage = () => {
         />
         <fieldset>
           <legend>Wanna share you recipe with your family/families?</legend>
-          {families.map((family) => (
+          {displayedFamilies.map((family) => (
             <label key={family._id}>
               <input
                 type="checkbox"
@@ -120,10 +158,12 @@ const AddRecipePage = () => {
             </label>
           ))}
         </fieldset>
-        <button type="submit">Create Recipe</button>
+        <button type="submit">
+          {type === "add" ? "Create" : "Update"} Recipe
+        </button>
       </form>
     </div>
   );
 };
 
-export default AddRecipePage;
+export default RecipeFormPage;

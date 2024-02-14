@@ -1,3 +1,7 @@
+.UserMainPage {
+  margin-left: calc(100px + 2rem);
+}
+
 .recipe-card {
   border: 1px solid black;
   margin-bottom: 1px;

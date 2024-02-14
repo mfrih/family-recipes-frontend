@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import myApi from "../../api/apiHandler";
+import "./OneRecipePage.css";
 
 function OneRecipePage() {
   const [recipe, setRecipe] = useState(null);
@@ -57,10 +58,15 @@ function OneRecipePage() {
   }
 
   return (
-    <div>
+    <div className="OneRecipePage">
       <h2>{recipe.name}</h2>
       {user && user._id === recipe.creatorId && (
         <button onClick={handleDelete}>Delete Recipe</button>
+      )}
+      {user && user._id === recipe.creatorId && (
+        <Link to={`/recipes/update/${recipeId}`}>
+          <button>Update Recipe</button>
+        </Link>
       )}
       <p>Servings:for {recipe.servings} people</p>
       <div>

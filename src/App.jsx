@@ -9,9 +9,10 @@ import FamilyPage from "./pages/FamilyPage/FamilyPage";
 import NavBar from "./components/NavBar/NavBar";
 import AddFamily from "./pages/AddFamily/AddFamily";
 import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
-import AddRecipePage from "./pages/AddRecipePage/AddRecipePage";
+import RecipeFormPage from "./pages/RecipeFormPage/RecipeFormPage";
 import OneRecipePage from "./pages/OneRecipePage/OneRecipePage";
 import IsAuthenticated from "./components/Routing/IsAuthenticated";
+import SideBar from "./components/SideBar/SideBar";
 
 function App() {
   return (
@@ -23,12 +24,21 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
 
         <Route element={<IsAuthenticated />}>
-          <Route path="/welcome" element={<UserMainPage />} />
-          <Route path="/my-families/:familyId" element={<FamilyPage />} />
-          <Route path="/my-families/add" element={<AddFamily />} />
-          <Route path="/my-recipes" element={<MyRecipesPage />} />
-          <Route path="/my-recipes/add" element={<AddRecipePage />} />
-          <Route path="/my-recipes/:recipeId" element={<OneRecipePage />} />
+          <Route element={<SideBar />}>
+            <Route path="/welcome" element={<UserMainPage />} />
+            <Route path="/my-families/:familyId" element={<FamilyPage />} />
+            <Route path="/my-families/add" element={<AddFamily />} />
+            <Route path="/my-recipes" element={<MyRecipesPage />} />
+            <Route
+              path="/recipes/add"
+              element={<RecipeFormPage type="add" />}
+            />
+            <Route
+              path="/recipes/update/:recipeId"
+              element={<RecipeFormPage type="update" />}
+            />
+            <Route path="/recipes/:recipeId" element={<OneRecipePage />} />
+          </Route>
         </Route>
       </Routes>
     </>
