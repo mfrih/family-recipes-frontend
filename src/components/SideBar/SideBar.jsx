@@ -1,11 +1,15 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import "./SideBar.css";
 
 function SideBar() {
   return (
     <div className="SideBar">
-      <aside>SideBar</aside>
+      <aside>
+        <Link to={"/recipes/search"}>
+          <h4>🔎 Search for recipes</h4>
+        </Link>
+      </aside>
       <Outlet />
     </div>
   );

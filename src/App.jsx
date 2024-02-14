@@ -13,6 +13,7 @@ import RecipeFormPage from "./pages/RecipeFormPage/RecipeFormPage";
 import OneRecipePage from "./pages/OneRecipePage/OneRecipePage";
 import IsAuthenticated from "./components/Routing/IsAuthenticated";
 import SideBar from "./components/SideBar/SideBar";
+import RecipeSearchPage from "./pages/RecipeSearchPage/RecipeSearchPage";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               path="/recipes/update/:recipeId"
               element={<RecipeFormPage type="update" />}
             />
+            <Route path="/recipes/search" element={<RecipeSearchPage />} />
             <Route path="/recipes/:recipeId" element={<OneRecipePage />} />
           </Route>
         </Route>
