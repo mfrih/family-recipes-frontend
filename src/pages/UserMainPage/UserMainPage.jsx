@@ -59,7 +59,6 @@ const UserMainPage = () => {
           })
         )}
       </div>
-
       <div className="my-recipes-wrapper">
         <h2>Your added recipes</h2>
         <Link to={`/recipes/add`}>Create a new recipe</Link>
@@ -71,7 +70,7 @@ const UserMainPage = () => {
         ) : (
           recipes.map((oneRecipe) => {
             return (
-              <Link to={`/recipes/${oneRecipe._id}`}>
+              <Link to={`/recipes/${oneRecipe._id}`} key={oneRecipe._id}>
                 <article key={oneRecipe._id} className="recipe-card">
                   <p>{oneRecipe.name}</p>
                   <p>Servings: {oneRecipe.servings}</p>
