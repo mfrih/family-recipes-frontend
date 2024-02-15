@@ -1,8 +1,61 @@
 .UserMainPage {
-  margin-left: calc(300px + 2rem);
+  margin-left: calc(
+    250px + 2rem
+  ); /* Adjusted to match sidebar width if needed */
+}
+.section-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
 
-.recipe-card {
-  border: 1px solid black;
-  margin-bottom: 1px;
+.my-families-wrapper,
+.my-recipes-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.OneFamilyCard,
+.OneRecipeCard {
+  flex: 0 1 180px; /* Width of the card, adjust as needed */
+  height: 240px; /* Height of the card, adjust as needed for a taller rectangle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
+}
+
+.OneFamilyCard:hover,
+.OneRecipeCard:hover {
+  background-color: #f0f0f0;
+}
+
+.add-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Removes underline from the link */
+  display: inline-block; /* Ensures proper spacing and padding */
+  margin-left: 10px; /* Space between the title and button */
+}
+
+.add-button:hover {
+  background-color: #0056b3;
 }

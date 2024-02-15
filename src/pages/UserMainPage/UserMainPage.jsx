@@ -41,33 +41,45 @@ const UserMainPage = () => {
   return (
     <div className="UserMainPage">
       <div className="my-families-wrapper">
-        <h2>Your family Recipe Books</h2>
-        <button className="add-button">
-          <Link to={`/my-families/add`}>Add Family</Link>
-        </button>
-        {families.length === 0 ? (
-          <p>You don't belong to any family. Consider creating your own.</p>
-        ) : (
-          families.map((family) => (
-            <OneFamilyCard key={family._id} family={family} />
-          ))
-        )}
+        <div className="section-header">
+          <h2>Your family Recipe Books</h2>
+          <button>
+            <Link className="add-button" to={`/my-families/add`}>
+              Add Family
+            </Link>
+          </button>
+        </div>
+        <div className="section-content">
+          {families.length === 0 ? (
+            <p>You don't belong to any family. Consider creating your own.</p>
+          ) : (
+            families.map((family) => (
+              <OneFamilyCard key={family._id} family={family} />
+            ))
+          )}
+        </div>
       </div>
       <div className="my-recipes-wrapper">
-        <h2>Your added recipes</h2>
-        <button className="add-button">
-          <Link to={`/recipes/add`}>Add Recipe</Link>
-        </button>
-        {recipes.length === 0 ? (
-          <p>
-            You haven't created any recipes yet. Why don't you add one and share
-            it with your family?
-          </p>
-        ) : (
-          recipes.map((recipe) => (
-            <OneRecipeCard key={recipe._id} recipe={recipe} />
-          ))
-        )}
+        <div className="section-header">
+          <h2>Your added recipes</h2>
+          <button>
+            <Link className="add-button" to={`/recipes/add`}>
+              Add Recipe
+            </Link>
+          </button>
+        </div>
+        <div className="section-content">
+          {recipes.length === 0 ? (
+            <p>
+              You haven't created any recipes yet. Why don't you add one and
+              share it with your family?
+            </p>
+          ) : (
+            recipes.map((recipe) => (
+              <OneRecipeCard key={recipe._id} recipe={recipe} />
+            ))
+          )}
+        </div>
       </div>
       <div>
         <h2>Signature recipes from your families</h2>
