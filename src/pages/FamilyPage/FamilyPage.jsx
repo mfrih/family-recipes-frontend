@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import AddMembers from "../../components/AddMembers/AddMembers";
 import MembersList from "../../components/MembersList/MembersList";
-import { useParams } from "react-router-dom";
+import FamilyRecipeList from "../../components/FamilyRecipeList/ FamilyRecipeList";
 import myApi from "../../api/apiHandler";
 import "./FamilyPage.css";
 
@@ -39,6 +40,7 @@ const FamilyPage = () => {
       <h2>Welcome to "{family.name}"</h2>
       <AddMembers family={family} isAdmin={isAdmin} setFamily={setFamily} />
       <MembersList family={family} isAdmin={isAdmin} setFamily={setFamily} />
+      <FamilyRecipeList family={family} />
     </div>
   );
 };

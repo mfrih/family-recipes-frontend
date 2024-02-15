@@ -44,16 +44,21 @@
   background-color: #f0f0f0;
 }
 
+/* Gérer le bouton */
+
 .add-button {
   padding: 5px 10px;
   background-color: #007bff;
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  text-decoration: none; /* Removes underline from the link */
-  display: inline-block; /* Ensures proper spacing and padding */
+  display: inline-block;
   margin-left: 10px; /* Space between the title and button */
+}
+
+add-button > a {
+  text-decoration: none; /* Removes underline from the link */
+  color: white;
 }
 
 .add-button:hover {

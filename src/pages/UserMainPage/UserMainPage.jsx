@@ -43,10 +43,8 @@ const UserMainPage = () => {
       <div className="my-families-wrapper">
         <div className="section-header">
           <h2>Your family Recipe Books</h2>
-          <button>
-            <Link className="add-button" to={`/my-families/add`}>
-              Add Family
-            </Link>
+          <button className="add-button">
+            <Link to={`/my-families/add`}>Add Family</Link>
           </button>
         </div>
         <div className="section-content">
@@ -62,10 +60,8 @@ const UserMainPage = () => {
       <div className="my-recipes-wrapper">
         <div className="section-header">
           <h2>Your added recipes</h2>
-          <button>
-            <Link className="add-button" to={`/recipes/add`}>
-              Add Recipe
-            </Link>
+          <button className="add-button">
+            <Link to={`/recipes/add`}>Add Recipe</Link>
           </button>
         </div>
         <div className="section-content">

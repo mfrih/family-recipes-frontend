@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import myApi from "../../api/apiHandler";
+import "./LoginPage.css";
 
 const LoginPage = () => {
   const [formState, setFormState] = useState({
@@ -30,7 +31,7 @@ const LoginPage = () => {
     }
   };
   return (
-    <div>
+    <div className="LoginPage">
       <h2>Log In</h2>
       <form onSubmit={handleSubmit}>
         <div>
