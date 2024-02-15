@@ -29,7 +29,7 @@ const FamilyPage = () => {
 
   useEffect(() => {
     fetchFamily();
-  }, []);
+  }, [familyId]);
 
   if (!family) {
     return <p>Loading...</p>;

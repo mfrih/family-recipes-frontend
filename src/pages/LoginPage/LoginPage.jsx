@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import myApi from "../../api/apiHandler";
-import "./LoginPage.css";
+// css for both auth pages is handleded in one file under the signup page
+import "../SignUpPage/AuthPages.css";
 
 const LoginPage = () => {
   const [formState, setFormState] = useState({
@@ -31,19 +32,21 @@ const LoginPage = () => {
     }
   };
   return (
-    <div className="LoginPage">
-      <h2>Log In</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">E-mail:</label>
-          <input type="email" id="email" onChange={handleChange} />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" onChange={handleChange} />
-        </div>
-        <button>Login</button>
-      </form>
+    <div className="auth-page">
+      <div className="auth-form-container">
+        <h2>Log In</h2>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <div>
+            <label htmlFor="email">E-mail</label>
+            <input type="email" id="email" onChange={handleChange} />
+          </div>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" onChange={handleChange} />
+          </div>
+          <button>Login</button>
+        </form>
+      </div>
     </div>
   );
 };

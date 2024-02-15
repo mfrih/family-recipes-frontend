@@ -1,0 +1,86 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f2eb; /* Creamy background */
+  color: #5a3e36; /* Dark brown text color similar to the logo */
+  font-family: "Merriweather", serif; /* A traditional font with a modern touch */
+}
+
+header {
+  background: #a17445; /* A darker shade based on the logo for the header */
+  color: white;
+}
+
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  width: 150px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.username-authbuttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  background: #ddb892; /* Light brown, for a softer button appearance */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Merriweather", serif;
+}
+
+button:hover {
+  background: #c4a77d;
+}
+
+/* Link styles */
+a {
+  color: inherit; /* Ensures links use the current text color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar styles */
+.SideBar {
+  background: #ddb892; /* Light brown */
+  /* Other sidebar styles */
+}
+
+/* Main Content Styles */
+.layoutWithSidebar {
+  display: flex;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border: 1px solid #ddb892; /* Light brown border */
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

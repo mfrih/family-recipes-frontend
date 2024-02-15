@@ -10,7 +10,7 @@ const NavBar = () => {
       <nav className="NavBar">
         <img
           className="nav-logo"
-          src="/cassoles_tajines_long_logo_white.png"
+          src="/cassoles_tajines_long_logo.png"
           alt="cassoles et tajines logo"
         />
         <div className="username-authbuttons">

@@ -1,0 +1,53 @@
+/* AuthPage.css - Applies to both SignUp and Login pages */
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--navbar-height)); /* Full height minus navbar */
+  background: #f5f5f5; /* Light background, adjust as needed */
+}
+
+.auth-form-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Maximum width of the form */
+}
+
+.auth-form-container h2 {
+  margin-bottom: 1.5rem; /* Adjust this value as needed */
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between form elements */
+}
+
+.auth-form label {
+  display: block; /* Makes the label a block element, ensuring it takes up its own line */
+  margin-bottom: 0.5rem; /* Adds some space below the label */
+}
+.auth-form input {
+  width: 100%; /* Makes the input take up the full width of its container */
+  padding: 0.5rem; /* Adds some padding inside the input for better text visibility */
+  margin-bottom: 1rem; /* Adds some space below the input */
+  border: 1px solid #cccccc; /* Specifies the border color */
+  border-radius: 4px; /* Rounds the corners of the input field */
+}
+
+.auth-form button {
+  padding: 0.5rem;
+  background-color: #a17445; /* Button color, adjust based on your theme */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #896c39; /* Darker shade for hover effect */
+}
