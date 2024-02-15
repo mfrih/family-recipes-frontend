@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const API_URL = "http://localhost:5005";
+import myApi from "../../api/apiHandler";
 
 const SignUpPage = () => {
   const [formState, setFormState] = useState({
@@ -21,7 +21,7 @@ const SignUpPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${API_URL}/auth/signup`, formState);
+      const response = await myApi.post(`/auth/signup`, formState);
       navigate("/login");
     } catch (error) {
       console.error("Error signing up", error);

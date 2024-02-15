@@ -4,6 +4,7 @@ import AddMembers from "../../components/AddMembers/AddMembers";
 import MembersList from "../../components/MembersList/MembersList";
 import { useParams } from "react-router-dom";
 import myApi from "../../api/apiHandler";
+import "./FamilyPage.css";
 
 const FamilyPage = () => {
   const [family, setFamily] = useState(null);
@@ -34,10 +35,10 @@ const FamilyPage = () => {
   }
 
   return (
-    <div>
+    <div className="FamilyPage">
       <h2>Welcome to "{family.name}"</h2>
-      <AddMembers familyId={familyId} isAdmin={isAdmin} />
-      <MembersList familyId={familyId} isAdmin={isAdmin} />
+      <AddMembers family={family} isAdmin={isAdmin} setFamily={setFamily} />
+      <MembersList family={family} isAdmin={isAdmin} setFamily={setFamily} />
     </div>
   );
 };

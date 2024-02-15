@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import myApi from "../../api/apiHandler";
 
-const AddMembers = ({ familyId, isAdmin }) => {
+const AddMembers = ({ family, isAdmin, setFamily }) => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -21,7 +21,11 @@ const AddMembers = ({ familyId, isAdmin }) => {
 
   const handleAddMember = async (addedUserId) => {
     try {
-      await myApi.put(`/api/families/${familyId}/members/add`, { addedUserId });
+      const response = await myApi.put(
+        `/api/families/${family._id}/members/add`,
+        { addedUserId }
+      );
+      setFamily(response.data);
     } catch (error) {
       console.error("Failed to add this member", error);
     }
