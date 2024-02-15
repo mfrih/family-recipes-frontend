@@ -14,6 +14,7 @@ import OneRecipePage from "./pages/OneRecipePage/OneRecipePage";
 import IsAuthenticated from "./components/Routing/IsAuthenticated";
 import SideBar from "./components/SideBar/SideBar";
 import RecipeSearchPage from "./pages/RecipeSearchPage/RecipeSearchPage";
+import LayoutWithSidebar from "./components/LayoutWithSidebar/LayoutWithSidebar";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
 
         <Route element={<IsAuthenticated />}>
-          <Route element={<SideBar />}>
+          <Route element={<LayoutWithSidebar />}>
             <Route path="/welcome" element={<UserMainPage />} />
             <Route path="/my-families/:familyId" element={<FamilyPage />} />
             <Route path="/my-families/add" element={<AddFamily />} />

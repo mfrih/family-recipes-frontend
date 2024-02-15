@@ -1,0 +1,6 @@
+.layoutWithSidebar {
+  display: flex;
+  flex-direction: row; /* Keeps the sidebar and outlet side-by-side */
+  padding-top: 70px; /* Adjusted to match the navbar's height */
+  min-height: 100vh; /* Ensures the layout fills the viewport height */
+}
