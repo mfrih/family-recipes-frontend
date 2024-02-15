@@ -1,39 +1,69 @@
 .SideBar {
-  position: fixed; /* Or sticky, depending on your preference */
-  top: 70px; /* Adjust this value based on the height of your NavBar */
+  position: fixed; /* Fixed position, so it's always visible on the side */
+  top: var(--navbar-height); /* Aligns right below the navbar */
   left: 0;
-  width: 250px; /* Adjust width to your preference */
-  height: calc(
-    100vh - 70px
-  ); /* Adjust the height dynamically based on the viewport height */
-  padding: 20px;
-  background-color: #ebded6; /* Slightly different from whitesmoke for a subtle contrast */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  overflow-y: auto; /* Adds scroll to the sidebar if content exceeds the viewport height */
-}
-
-.SideBar h4 {
-  margin: 5px -20px; /* Adjusted to negate sidebar padding */
-  padding: 10px 15px; /* Increased padding for more height, reset side padding */
-  transition: background-color 0.3s ease;
-  width: calc(100% + 40px); /* Counteract negative margins */
-  box-sizing: border-box; /* Ensures padding is included in width calculation */
-}
-
-.SideBar h4:hover {
-  background-color: #f8f6f6; /* Background color on hover for the entire h4 */
+  width: 250px; /* Sidebar width */
+  height: calc(100vh - var(--navbar-height)); /* Full height minus the navbar */
+  background: #ddb892; /* Light brown to match the theme */
+  color: #5a3e36; /* Dark brown text color for contrast */
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow to the right */
+  overflow-y: auto; /* Allows scrolling if the content is too long */
+  padding: 0; /* Padding inside the sidebar */
+  /* box-sizing: border-box; */
 }
 
 .SideBar a {
-  display: block;
-  width: 100%; /* Ensure link uses the full width of the h4 */
-  text-decoration: none;
-  color: #333;
+  color: #5a3e36; /* Dark brown text color */
+  text-decoration: none; /* No underlines on links */
+  display: block; /* Each link takes up a full row */
 }
 
-.SideBar div p {
-  padding-left: 20px; /* Adds indentation to family names */
+.SideBar a p {
+  padding: 0.75rem 1rem; /* Apply padding to <p> for spacing */
+}
+
+.SideBar a:hover,
+.SideBar a:focus {
+  /* Add focus for accessibility */
+  background-color: #eae0d5; /* Light color for hover */
+  text-decoration: none; /* No underline on hover */
+}
+
+.SideBar hr {
+  border: none;
+  height: 1px;
+  background-color: #5a3e36;
+  margin: 0.5rem 0;
+}
+
+/* Adjust the below selectors to match the elements in your sidebar */
+.SideBar h4 {
+  padding: 1rem 1rem; /* Give some space around the h4 text */
+  margin: 0; /* Remove margin */
+}
+
+.SideBar .family-add-link p {
+  padding: 0.75rem 1rem; /* Consistent padding with other elements */
+  display: block; /* Ensure it's a block level element to fill the width */
+}
+
+/* Add this to remove the bullet points and padding from the list */
+.SideBar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.SideBar ul li {
+  padding: 0.75rem 1rem; /* Consistent padding with other elements */
+}
+
+/* For when there are no families to list */
+.family-add-link p {
+  background-color: #c4a77d;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.family-add-link p:hover {
+  background-color: #b3966f;
 }

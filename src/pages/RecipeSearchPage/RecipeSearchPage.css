@@ -1,3 +1,38 @@
 .RecipeSearchPage {
-  margin-left: calc(300px + 2rem);
+  margin-left: 300px; /* This should match the width of your sidebar */
+  padding-top: calc(
+    var(--navbar-height) + 0.5rem
+  ); /* This should match the height of your navbar */
+  padding-left: 1rem; /* Add some space between the sidebar and the content */
+  padding-right: 1rem; /* Add some space on the right side */
+  padding-bottom: 1rem; /* Space at the bottom */
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.RecipeSearchPage input {
+  padding: 0.5rem;
+  margin-right: 0.5rem; /* Spacing between input and button */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.RecipeSearchPage button {
+  padding: 0.5rem 1rem;
+  background-color: #eae0d5; /* Same as your add buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styling for the search results, if you want to add a border or shadow to each recipe card */
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem; /* Spacing after the search button */
 }

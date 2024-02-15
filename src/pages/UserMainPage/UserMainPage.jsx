@@ -77,12 +77,12 @@ const UserMainPage = () => {
           )}
         </div>
       </div>
-      <div>
+      {/* <div>
         <h2>Signature recipes from your families</h2>
       </div>
       <div>
         <h2>Recently added recipes</h2>
-      </div>
+      </div> */}
     </div>
   );
 };

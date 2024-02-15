@@ -1,66 +1,66 @@
 .UserMainPage {
-  margin-left: calc(
-    250px + 2rem
-  ); /* Adjusted to match sidebar width if needed */
+  margin-left: 300px; /* This should match the width of your sidebar */
+  padding-top: calc(
+    var(--navbar-height) + 0.5rem
+  ); /* This should match the height of your navbar */
+  padding-left: 1rem; /* Add some space between the sidebar and the content */
+  padding-right: 1rem; /* Add some space on the right side */
+  padding-bottom: 1rem; /* Space at the bottom */
 }
+
+/* Styling for the section headers with the title and button */
 .section-header {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
+  justify-content: space-between; /* Aligns the title to the left and the button to the right */
+  align-items: center; /* Centers items vertically */
+  margin-bottom: 1rem; /* Space below the header */
 }
-
-.my-families-wrapper,
-.my-recipes-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.section-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-start;
-}
-
-.OneFamilyCard,
-.OneRecipeCard {
-  flex: 0 1 180px; /* Width of the card, adjust as needed */
-  height: 240px; /* Height of the card, adjust as needed for a taller rectangle */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-decoration: none;
-  color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
-}
-
-.OneFamilyCard:hover,
-.OneRecipeCard:hover {
-  background-color: #f0f0f0;
-}
-
-/* Gérer le bouton */
 
 .add-button {
-  padding: 5px 10px;
-  background-color: #007bff;
+  background-color: #eae0d5; /* Neutral color for the button */
   border: none;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   cursor: pointer;
-  display: inline-block;
-  margin-left: 10px; /* Space between the title and button */
+  text-align: center;
 }
 
-add-button > a {
-  text-decoration: none; /* Removes underline from the link */
-  color: white;
+.add-button a {
+  text-decoration: none;
+  color: #5a3e36; /* Dark brown text to match the sidebar */
+}
+.my-families-wrapper {
+  margin-bottom: 3rem; /* Increased space between sections */
 }
 
-.add-button:hover {
-  background-color: #0056b3;
+/* Styling for the family and recipe cards */
+.my-families-wrapper .section-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 1rem; /* Space between cards */
+}
+
+.my-recipes-wrapper .section-content {
+  display: flex;
+  flex-direction: row; /* Line up items in a row */
+  flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+  gap: 1rem; /* Space between cards */
+  justify-content: flex-start; /* Aligns cards to the start of the container */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .UserMainPage {
+    margin-left: 0; /* Sidebar stacks above on smaller screens */
+    padding-top: var(--navbar-height);
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns the button below the title */
+  }
+
+  .add-button {
+    margin-top: 0.5rem; /* Space between the title and the button on small screens */
+  }
 }

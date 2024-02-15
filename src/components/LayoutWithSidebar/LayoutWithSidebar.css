@@ -1,6 +1,10 @@
-.layoutWithSidebar {
+.LayoutWithSidebar {
   display: flex;
-  flex-direction: row; /* Keeps the sidebar and outlet side-by-side */
-  padding-top: 70px; /* Adjusted to match the navbar's height */
-  min-height: 100vh; /* Ensures the layout fills the viewport height */
+}
+
+/* Apply a left margin to the main content area (Outlet) */
+.LayoutWithSidebar > .outlet {
+  margin-left: 250px; /* This should match the width of your sidebar */
+  width: calc(100% - 250px); /* Adjust the width of the main content */
+  padding: 1rem; /* Optional: Add padding for spacing */
 }

@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+.OneRecipeCard {
+  text-decoration: none;
+  color: inherit; /* Take color from parent */
+  display: block; /* Allows the link to take up the full area of the card */
+  background-color: #f5f5f5; /* Lighter color for recipe cards */
+  padding: 1rem;
+  border-radius: 8px; /* Rounded corners for the card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Dancing Script", cursive;
+  width: 150px; /* Set a fixed width smaller than the height */
+  height: 250px; /* Set a height taller than the width to make the card vertical */
+  margin: 0.5rem; /* Provide some space around the card */
+  flex: 0 0 auto; /* Do not grow, do not shrink, auto basis based on width and height */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.OneRecipeCard h3 {
+  margin: 0 0 0.5rem 0;
+  color: #5a3e36; /* Dark brown text to match the sidebar */
+  font-size: 1.5rem;
+}
+
+.OneRecipeCard p {
+  margin: 0;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import myApi from "../../api/apiHandler";
+import OneRecipeCard from "../../components/OneRecipeCard/OneRecipeCard";
 import "./RecipeSearchPage.css";
 
 const RecipeSearch = () => {
@@ -28,9 +29,9 @@ const RecipeSearch = () => {
       />
       <button onClick={handleSearch}>Search</button>
 
-      <div>
+      <div className="search-results">
         {recipes.map((recipe) => (
-          <div key={recipe._id}>{recipe.name}</div>
+          <OneRecipeCard key={recipe._id} recipe={recipe} />
         ))}
       </div>
     </div>

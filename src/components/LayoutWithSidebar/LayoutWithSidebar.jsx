@@ -5,9 +5,9 @@ import "./LayoutWithSidebar.css";
 
 function LayoutWithSidebar() {
   return (
-    <div className="layoutWithSidebar">
+    <div className="LayoutWithSidebar">
       <SideBar />
-      <Outlet />
+      <Outlet className="outlet" />
     </div>
   );
 }

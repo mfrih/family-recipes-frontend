@@ -1,0 +1,21 @@
+.OneFamilyCard {
+  text-decoration: none;
+  color: inherit; /* Take color from parent */
+  display: block; /* Allows the link to take up the full area of the card */
+  background-color: #fff8f0; /* Slightly off-white for family cards */
+  padding: 1rem;
+  border-radius: 50%; /* Fully rounded corners for a circle */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+  width: 200px; /* Fixed size for a circle */
+  height: 200px; /* Fixed size for a circle */
+  display: flex; /* Center content using flexbox */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  box-sizing: border-box; /* Include padding and border in the width */
+  overflow: hidden; /* Ensures no content spills out of the border radius */
+}
+
+.OneFamilyCard h3 {
+  text-align: center;
+}

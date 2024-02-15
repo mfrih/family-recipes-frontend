@@ -62,30 +62,3 @@ function SideBar() {
 }
 
 export default SideBar;
-
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import "./SideBar.css";
-// import myApi from "../../api/apiHandler";
-
-// function SideBar() {
-//   const
-//   return (
-//     <div className="SideBar">
-//       <aside>
-//         <Link to={"/welcome"}>
-//           <h4>🛖 Home</h4>
-//         </Link>
-//         <Link to={"/recipes/search"}>
-//           <h4>🔎 Search for recipes</h4>
-//         </Link>
-//         <hr />
-//         <Link>
-//           <h4>📒 Your family recipe books</h4>
-//         </Link>
-//       </aside>
-//     </div>
-//   );
-// }
-
-// export default SideBar;
