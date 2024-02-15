@@ -1,0 +1,112 @@
+.RecipeGenerationPage {
+  margin-left: calc(250px + 2rem);
+  /* position: fixed; */
+  top: 70px;
+}
+
+.recipe-gen-intro {
+  padding: 10vh;
+  height: 50vh;
+  line-height: 40px;
+}
+
+.recipe-gen-intro h2 {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+}
+
+.mamette-emoji {
+  font-size: 2.7rem;
+}
+
+.recipe-gen-intro quote {
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.recipe-generation-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-bottom: 5rem;
+  & > * {
+    width: 40%;
+  }
+}
+
+.recipe-finetuning {
+  height: 60vh;
+}
+
+.recipe-finetuning h3 {
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.all-sliders {
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.generation-button {
+  text-align: center;
+}
+
+.generation-button button {
+  background-color: #bd8156;
+  border: transparent;
+  font-size: 1rem;
+  height: 2.5rem;
+  margin: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px 0 8px 0;
+}
+
+.recipe-wrapper {
+  border: 1px solid #bd8156;
+}
+
+.recipe h3 {
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.recipe h4 {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 50px;
+}
+
+.recipe ul {
+  text-align: center;
+  line-height: 25px;
+  list-style: none;
+}
+
+.recipe ol {
+  text-align: center;
+  line-height: 25px;
+  margin-bottom: 3vh;
+  list-style: none;
+}
+
+.recipe p {
+  text-align: center;
+}
+
+.mamette-waiting {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+}

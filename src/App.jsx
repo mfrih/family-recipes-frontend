@@ -15,6 +15,7 @@ import IsAuthenticated from "./components/Routing/IsAuthenticated";
 import SideBar from "./components/SideBar/SideBar";
 import RecipeSearchPage from "./pages/RecipeSearchPage/RecipeSearchPage";
 import LayoutWithSidebar from "./components/LayoutWithSidebar/LayoutWithSidebar";
+import RecipeGenerationPage from "./pages/RecipeGenerationPage/RecipeGenerationPage";
 
 function App() {
   return (
@@ -41,6 +42,10 @@ function App() {
             />
             <Route path="/recipes/search" element={<RecipeSearchPage />} />
             <Route path="/recipes/:recipeId" element={<OneRecipePage />} />
+            <Route
+              path="/recipes/generated-by-MametteAI"
+              element={<RecipeGenerationPage />}
+            />
           </Route>
         </Route>
       </Routes>

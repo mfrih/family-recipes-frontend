@@ -51,7 +51,7 @@ function SideBar() {
           <h4> 👩🏾‍🍳 My Recipes</h4>
         </Link>
         <hr />
-        <Link>
+        <Link to={"/recipes/generated-by-MametteAI"}>
           <h4>
             🪄 Need Inspiration, let Mamette<sup>AI</sup> help you!
           </h4>
