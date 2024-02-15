@@ -3,6 +3,8 @@ import { AuthContext } from "../../context/auth.context";
 import { Link } from "react-router-dom";
 import myApi from "../../api/apiHandler";
 import "./UserMainPage.css";
+import OneFamilyCard from "../../components/OneFamilyCard/OneFamilyCard";
+import OneRecipeCard from "../../components/OneRecipeCard/OneRecipeCard";
 
 const UserMainPage = () => {
   const [families, setFamilies] = useState(null);
@@ -39,45 +41,32 @@ const UserMainPage = () => {
   return (
     <div className="UserMainPage">
       <div className="my-families-wrapper">
-        <h2>Your families</h2>
-        <Link to={`/my-families/add`}>Create a new family</Link>
+        <h2>Your family Recipe Books</h2>
+        <button className="add-button">
+          <Link to={`/my-families/add`}>Add Family</Link>
+        </button>
         {families.length === 0 ? (
-          <p>
-            You don't belong to any family. Si tu ne veux pas être un·e Rémi
-            sans famille, crée ta propre famille
-          </p>
+          <p>You don't belong to any family. Consider creating your own.</p>
         ) : (
-          families.map((oneFamily) => {
-            return (
-              <article key={oneFamily._id}>
-                <p>{oneFamily.name}</p>
-                <Link to={`/my-families/${oneFamily._id}`}>
-                  Access your family recipes and members...
-                </Link>
-              </article>
-            );
-          })
+          families.map((family) => (
+            <OneFamilyCard key={family._id} family={family} />
+          ))
         )}
       </div>
       <div className="my-recipes-wrapper">
         <h2>Your added recipes</h2>
-        <Link to={`/recipes/add`}>Create a new recipe</Link>
+        <button className="add-button">
+          <Link to={`/recipes/add`}>Add Recipe</Link>
+        </button>
         {recipes.length === 0 ? (
           <p>
-            You haven't created any recipe yet. That would be nice to create one
-            and share it, as we say "sharing is caring"!
+            You haven't created any recipes yet. Why don't you add one and share
+            it with your family?
           </p>
         ) : (
-          recipes.map((oneRecipe) => {
-            return (
-              <Link to={`/recipes/${oneRecipe._id}`} key={oneRecipe._id}>
-                <article key={oneRecipe._id} className="recipe-card">
-                  <p>{oneRecipe.name}</p>
-                  <p>Servings: {oneRecipe.servings}</p>
-                </article>
-              </Link>
-            );
-          })
+          recipes.map((recipe) => (
+            <OneRecipeCard key={recipe._id} recipe={recipe} />
+          ))
         )}
       </div>
       <div>
