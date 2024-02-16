@@ -59,15 +59,19 @@ function OneRecipePage() {
 
   return (
     <div className="OneRecipePage">
-      <h2>{recipe.name}</h2>
-      {user && user._id === recipe.creatorId && (
-        <button onClick={handleDelete}>Delete Recipe</button>
-      )}
-      {user && user._id === recipe.creatorId && (
-        <Link to={`/recipes/update/${recipeId}`}>
-          <button>Update Recipe</button>
-        </Link>
-      )}
+      <div className="recipe-header">
+        <h2>{recipe.name}</h2>
+        <div className="recipe-buttons">
+          {user && user._id === recipe.creatorId && (
+            <button onClick={handleDelete}>Delete Recipe</button>
+          )}
+          {user && user._id === recipe.creatorId && (
+            <Link to={`/recipes/update/${recipeId}`}>
+              <button>Update Recipe</button>
+            </Link>
+          )}
+        </div>
+      </div>
       <p>Servings:for {recipe.servings} people</p>
       <div>
         <h4>Ingredients</h4>

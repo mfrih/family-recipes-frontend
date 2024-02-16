@@ -1,3 +1,61 @@
 .OneRecipePage {
-  margin-left: calc(300px + 2rem);
+  margin-left: 300px; /* Adjust if your sidebar width is different */
+  padding-top: var(--navbar-height);
+  padding: 2rem;
+  max-width: 800px; /* Limit the content width for better readability */
+  margin: var(--navbar-height) auto 0 auto; /* Center the content vertically and respect the navbar height */
+  background: #fff; /* Optional: add a background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow for depth */
+  border-radius: 8px; /* Optional: round corners */
+}
+
+.OneRecipePage h2,
+.OneRecipePage h4 {
+  color: #5a3e36; /* A warm, dark brown */
+}
+
+.OneRecipePage button {
+  background-color: #ac6f4e;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem; /* Space between buttons if both are visible */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.OneRecipePage button:hover {
+  background-color: #8a5643; /* Darken button on hover */
+}
+
+.OneRecipePage p,
+.OneRecipePage ul {
+  padding-left: 1rem; /* Indent text for better readability */
+}
+
+.OneRecipePage ul {
+  list-style-type: disc; /* Add bullets to the list */
+}
+
+.recipe-header {
+  display: flex;
+  align-items: center; /* Align the items vertically */
+  justify-content: space-between; /* Put space between the title and buttons */
+  flex-wrap: wrap; /* Wrap onto the next line if space is insufficient */
+}
+
+.recipe-header h2 {
+  flex-grow: 1; /* Allow the title to grow and fill the space */
+  margin-right: 1rem; /* Add margin to push the buttons away from the title */
+}
+
+.recipe-buttons {
+  display: flex;
+  gap: 0.5rem; /* Add space between buttons */
+}
+
+/* You might want to adjust button styling as well */
+.OneRecipePage button {
+  /* Existing styles */
+  margin: 0; /* Remove margin to prevent layout shift */
 }

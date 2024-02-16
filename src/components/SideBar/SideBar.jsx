@@ -46,15 +46,16 @@ function SideBar() {
             </div>
           )}
         </div>
-        <hr />
-        <Link to={"/my-recipes"}>
-          <h4> 👩🏾‍🍳 My Recipes</h4>
-        </Link>
+
         <hr />
         <Link to={"/recipes/generated-by-MametteAI"}>
           <h4>
             🪄 Need Inspiration, let Mamette<sup>AI</sup> help you!
           </h4>
+        </Link>
+        <hr />
+        <Link to={"/my-recipes"}>
+          <h4> 👩🏾‍🍳 My Recipes, coming soon...</h4>
         </Link>
       </aside>
     </div>
