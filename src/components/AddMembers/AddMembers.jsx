@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import myApi from "../../api/apiHandler";
+import "./AddMembers.css";
 
 const AddMembers = ({ family, isAdmin, setFamily }) => {
   const [search, setSearch] = useState("");
@@ -36,7 +37,7 @@ const AddMembers = ({ family, isAdmin, setFamily }) => {
   }
 
   return (
-    <>
+    <div className="AddMembers">
       <h2>Add Members to your family</h2>
       <form onSubmit={handleSearch}>
         <input
@@ -55,7 +56,7 @@ const AddMembers = ({ family, isAdmin, setFamily }) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

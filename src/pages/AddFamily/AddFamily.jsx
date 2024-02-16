@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import myApi from "../../api/apiHandler";
 import { useNavigate } from "react-router-dom";
+import "./AddFamily.css";
 
 const AddFamily = () => {
   const [formState, setFormState] = useState({
@@ -26,7 +27,7 @@ const AddFamily = () => {
   };
 
   return (
-    <>
+    <div className="AddFamily">
       <h2>Create your own family...</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -49,7 +50,7 @@ const AddFamily = () => {
         </div>
         <button>Create family</button>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -4,12 +4,12 @@
   left: 0;
   width: 250px; /* Sidebar width */
   height: calc(100vh - var(--navbar-height)); /* Full height minus the navbar */
-  background: #ddb892; /* Light brown to match the theme */
+  background: #f1eae3; /* Light brown to match the theme */
   color: #5a3e36; /* Dark brown text color for contrast */
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow to the right */
   overflow-y: auto; /* Allows scrolling if the content is too long */
   padding: 0; /* Padding inside the sidebar */
-  /* box-sizing: border-box; */
+  padding-top: calc(var(--navbar-height) - 1rem);
 }
 
 .SideBar a {
@@ -59,11 +59,10 @@
 
 /* For when there are no families to list */
 .family-add-link p {
-  background-color: #c4a77d;
   text-align: center;
   border-radius: 4px;
 }
 
 .family-add-link p:hover {
-  background-color: #b3966f;
+  background-color: #e1d8cc;
 }

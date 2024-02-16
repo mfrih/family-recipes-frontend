@@ -3,4 +3,9 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-start;
+  width: 100%;
+}
+
+.FamilyRecipeList h2 {
+  margin-bottom: 1rem; /* Space below the title */
 }

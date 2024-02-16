@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Merriweather:wght@400;700&display=swap");
+
+.HomePage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: url("/pexels-ella-olsson-1640773.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.HomePage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+  z-index: -1;
+}
+
+.text-content,
+.buttons-wrapper {
+  position: relative;
+  z-index: 2; /* Make sure text and buttons are above the overlay */
+}
+.HomePage h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #5a3e36; /* Dark brown color */
+}
+
+.HomePage h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #5a3e36; /* Dark brown color */
+}
+
+.HomePage h4 {
+  font-family: "Merriweather", serif;
+  margin-top: 2rem;
+  color: #5a3e36; /* Dark brown color */
+}
+
+.buttons-wrapper {
+  margin-top: 2rem;
+}
+
+.buttons-wrapper button {
+  background-color: #ddb892; /* A lighter brown color */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttons-wrapper button:hover {
+  background-color: #ac6f4e; /* A darker brown color for hover state */
+}

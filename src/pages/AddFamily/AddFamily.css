@@ -1,0 +1,58 @@
+.AddFamily {
+  margin-left: 300px; /* This should match the width of your sidebar */
+  padding-top: calc(
+    var(--navbar-height) + 0.5rem
+  ); /* This should match the height of your navbar */
+  padding-left: 1rem; /* Add some space between the sidebar and the content */
+  padding-right: 1rem; /* Add some space on the right side */
+  padding-bottom: 1rem; /* Space at the bottom */
+}
+
+.AddFamily {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content */
+  margin-left: 300px;
+  padding-top: var(--navbar-height);
+  padding: 1rem;
+}
+
+.AddFamily h2 {
+  margin-bottom: 1rem;
+}
+
+.AddFamily form {
+  width: 100%; /* Full width of the component */
+  max-width: 500px; /* Max width of the form */
+  background: #fff8f0;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.AddFamily label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.AddFamily input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.AddFamily button {
+  background-color: #ac6f4e; /* Your theme color */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.AddFamily button:hover {
+  background-color: #8a5643; /* Darker shade for hover effect */
+}

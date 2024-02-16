@@ -29,11 +29,13 @@ const FamilyRecipeList = ({ family }) => {
   }
 
   return (
-    <div className="FamilyRecipeList">
+    <div>
       <h2>Your Family (secret) Recipes</h2>
-      {recipes.map((recipe) => (
-        <OneRecipeCard key={recipe._id} recipe={recipe} />
-      ))}
+      <div className="FamilyRecipeList">
+        {recipes.map((recipe) => (
+          <OneRecipeCard key={recipe._id} recipe={recipe} />
+        ))}
+      </div>
     </div>
   );
 };

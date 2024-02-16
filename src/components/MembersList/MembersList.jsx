@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import myApi from "../../api/apiHandler";
+import OneFamilyMember from "../OneFamilyMember/OneFamilyMember";
 
 const MembersList = ({ family, isAdmin, setFamily }) => {
   const [members, setMembers] = useState(null);
@@ -37,20 +38,18 @@ const MembersList = ({ family, isAdmin, setFamily }) => {
     return <p>Loading...</p>;
   }
   return (
-    <div>
+    <div className="members-list">
       <h2>Family Members</h2>
-      <ul>
+      <div className="members-list">
         {members.map((member) => (
-          <li key={member._id}>
-            {member.username} ({member.email})
-            {isAdmin && (
-              <button onClick={() => handleRemoveMember(member._id)}>
-                Delete
-              </button>
-            )}
-          </li>
+          <OneFamilyMember
+            key={member._id}
+            member={member}
+            isAdmin={isAdmin}
+            handleRemoveMember={handleRemoveMember}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

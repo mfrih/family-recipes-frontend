@@ -87,7 +87,7 @@ function RecipeGenerationPage() {
           <h3>Alors on mange quoi ?</h3>
           <div className="all-sliders">
             <Slider
-              label="Sain (...pourtant le gras c'est la vie pourtant)"
+              label="Sain (...pourtantle gras c'est la vie pourtant)"
               value={healthyValue}
               onChange={handleHealthyChange}
             />
@@ -113,7 +113,7 @@ function RecipeGenerationPage() {
             />
 
             <Slider
-              label="Végétarien (... eh oui, j'évolue moi aussi)"
+              label="Végétarien (...eh oui, j'évolue moi aussi)"
               value={vegetarianValue}
               onChange={handleVegetarianChange}
             />

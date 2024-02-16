@@ -38,9 +38,9 @@ const FamilyPage = () => {
   return (
     <div className="FamilyPage">
       <h2>Welcome to "{family.name}"</h2>
+      <FamilyRecipeList family={family} />
       <AddMembers family={family} isAdmin={isAdmin} setFamily={setFamily} />
       <MembersList family={family} isAdmin={isAdmin} setFamily={setFamily} />
-      <FamilyRecipeList family={family} />
     </div>
   );
 };
