@@ -1,38 +1,59 @@
 .RecipeSearchPage {
-  margin-left: 300px; /* This should match the width of your sidebar */
-  padding-top: calc(
-    var(--navbar-height) + 0.5rem
-  ); /* This should match the height of your navbar */
-  padding-left: 1rem; /* Add some space between the sidebar and the content */
-  padding-right: 1rem; /* Add some space on the right side */
-  padding-bottom: 1rem; /* Space at the bottom */
+  margin-left: 400px;
+  padding-top: calc(var(--navbar-height) + 2rem);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  text-align: center; /* Center align the text */
 }
 
-.search-results {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.RecipeSearchPage .search-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
+/* Style adjustments for input */
 .RecipeSearchPage input {
-  padding: 0.5rem;
-  margin-right: 0.5rem; /* Spacing between input and button */
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  width: 100%; /* Adjust input width to fill the container */
+  padding: 1rem;
+  padding-right: 3rem; /* Make room for the button inside the input */
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  display: block;
+}
+
+/* Ensure the paragraph matches the width of the input and is centered */
+.RecipeSearchPage > p {
+  width: 80%;
+  margin: 0 auto; /* Centers the paragraph */
+  padding: 1rem 0; /* Adds some vertical spacing */
 }
 
 .RecipeSearchPage button {
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 0.5rem 1rem;
-  background-color: #eae0d5; /* Same as your add buttons */
+  margin: 1px; /* Adjust if necessary to fit inside the input */
+  border-top-right-radius: 25px; /* Match the input's border radius */
+  border-bottom-right-radius: 25px; /* Match the input's border radius */
+  background-color: #eae0d5;
+  color: #5a3e36;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  height: calc(100% - 2px);
+  transition: background-color 0.3s ease;
 }
 
-/* Styling for the search results, if you want to add a border or shadow to each recipe card */
+.RecipeSearchPage button:hover {
+  background-color: #ddb892;
+}
+
 .search-results {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1rem; /* Spacing after the search button */
+  margin-top: 5rem;
 }

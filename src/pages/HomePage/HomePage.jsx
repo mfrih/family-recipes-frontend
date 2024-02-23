@@ -5,17 +5,22 @@ import "./HomePage.css";
 function HomePage() {
   return (
     <div className="HomePage">
-      <h2 className="text-content">Welcome to "Cassoles et Tajines".</h2>
-      <h3>A place where every flavor tells a story.</h3>
-      <h4>
-        "Cassoles et Tajines" let you store your family's most guarded secret:
-        Your family's recipes!
-      </h4>
-      <h4>New to our community? Let's get started!</h4>
-      <div className="buttons-wrapper">
-        <Link to={"/signup"}>
-          <button>Join Now</button>
-        </Link>
+      <div className="cover-image">
+        <img src="/epices.jpg" alt="" />
+        <div className="homepage-tagline">
+          <h2>Welcome to Cassoles & Tajines</h2>
+          <h3>A place where every flavor tells a story.</h3>
+          <h4>
+            Store and share your family's most guarded secret: Your family
+            recipes!
+          </h4>
+          <p>New to our community? Let's get started!</p>
+          <div className="buttons-wrapper">
+            <Link to={"/signup"}>
+              <button>Join Now</button>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

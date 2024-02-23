@@ -6,7 +6,7 @@ function OneFamilyCard({ family }) {
   return (
     <Link to={`/my-families/${family._id}`} className="OneFamilyCard">
       <div>
-        <h3>{family.name}</h3>
+        <h4>{family.name}</h4>
       </div>
     </Link>
   );

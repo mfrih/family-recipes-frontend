@@ -1,0 +1,37 @@
+.OneFamilyMember {
+  width: 120px; /* Circle size */
+  height: 120px; /* Circle size */
+  border-radius: 50%; /* Circle shape */
+  background-color: #f9f9f9; /* Circle background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  margin: 10px; /* Spacing around each circle */
+  position: relative; /* Needed for absolute positioning of the button */
+  font-size: 0.8rem; /* Font size for text inside the circle */
+}
+
+/* Adjust paragraph (username) styling if necessary */
+.OneFamilyMember p {
+  margin: 0; /* Ensures text is centered without default margin */
+  padding: 0; /* Adjust if needed */
+  /* Additional styles here if needed */
+}
+
+.OneFamilyMember button {
+  position: absolute; /* Position relative to the container */
+  bottom: -40px; /* Place under the circle */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Align center */
+  background-color: transparent; /* No background for button */
+  color: #5a3e36; /* Button text color */
+  border: none; /* No border */
+  cursor: pointer;
+  text-decoration: none; /* No underline by default */
+  font-size: 0.9rem; /* Match text size */
+}
+
+.OneFamilyMember button:hover {
+  text-decoration: underline; /* Underline on hover */
+}

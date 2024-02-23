@@ -1,1 +1,11 @@
+.MembersList h3 {
+  margin-bottom: 1.5rem;
+}
 
+.members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}

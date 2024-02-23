@@ -40,11 +40,17 @@ const UserMainPage = () => {
 
   return (
     <div className="UserMainPage">
+      <div className="welcome-user">
+        <h2>
+          <img src="/cooking-pot.png" />
+          {"  "}Welcome {user.username}
+        </h2>
+      </div>
       <div className="my-families-wrapper">
         <div className="section-header">
-          <h2>Your family Recipe Books</h2>
+          <h3>Your family Recipe Books</h3>
           <button className="add-button">
-            <Link to={`/my-families/add`}>Add Family</Link>
+            <Link to={`/my-families/add`}> ⊕ Add Family</Link>
           </button>
         </div>
         <div className="section-content">
@@ -59,9 +65,9 @@ const UserMainPage = () => {
       </div>
       <div className="my-recipes-wrapper">
         <div className="section-header">
-          <h2>Your added recipes</h2>
+          <h3>Your added recipes</h3>
           <button className="add-button">
-            <Link to={`/recipes/add`}>Add Recipe</Link>
+            <Link to={`/recipes/add`}> ⊕ Add Recipe</Link>
           </button>
         </div>
         <div className="section-content">

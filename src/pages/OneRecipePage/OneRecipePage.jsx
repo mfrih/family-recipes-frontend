@@ -53,6 +53,12 @@ function OneRecipePage() {
       }
   };
 
+  function formatListItems(text) {
+    return text.split("\n").map(
+      (item, index) => item && <li key={index}>{item}</li> // This checks if the item is not empty
+    );
+  }
+
   if (!recipe) {
     return <p>Loading...</p>;
   }
@@ -62,10 +68,10 @@ function OneRecipePage() {
       <div className="recipe-header">
         <h2>{recipe.name}</h2>
         <div className="recipe-buttons">
-          {user && user._id === recipe.creatorId && (
+          {user && user._id === recipe.creatorId._id && (
             <button onClick={handleDelete}>Delete Recipe</button>
           )}
-          {user && user._id === recipe.creatorId && (
+          {user && user._id === recipe.creatorId._id && (
             <Link to={`/recipes/update/${recipeId}`}>
               <button>Update Recipe</button>
             </Link>
@@ -75,11 +81,11 @@ function OneRecipePage() {
       <p>Servings:for {recipe.servings} people</p>
       <div>
         <h4>Ingredients</h4>
-        <p>{recipe.ingredients}</p>
+        <ul>{formatListItems(recipe.ingredients)}</ul>
       </div>
       <div>
         <h4>Instructions</h4>
-        <p>{recipe.instructions}</p>
+        <ul>{formatListItems(recipe.instructions)}</ul>
       </div>
       <div>
         <h4>Families shared with</h4>

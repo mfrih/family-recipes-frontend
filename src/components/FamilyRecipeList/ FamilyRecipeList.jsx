@@ -29,9 +29,9 @@ const FamilyRecipeList = ({ family }) => {
   }
 
   return (
-    <div>
-      <h2>Your Family (secret) Recipes</h2>
-      <div className="FamilyRecipeList">
+    <div className="FamilyRecipeList">
+      <h3>The Family's Recipes</h3>
+      <div className="recipe-card-list">
         {recipes.map((recipe) => (
           <OneRecipeCard key={recipe._id} recipe={recipe} />
         ))}

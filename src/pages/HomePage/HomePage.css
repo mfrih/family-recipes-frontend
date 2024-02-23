@@ -8,29 +8,75 @@
   justify-content: center;
   text-align: center;
   min-height: 100vh;
-  padding: 2rem;
-  background: url("/pexels-ella-olsson-1640770.jpg") no-repeat center center;
-  background-size: cover;
 }
 
-.HomePage h2 {
+.cover-image {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cover-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: brightness(0.8) contrast(1) blur(3px); */
+  filter: brightness(0.8) contrast(0.6) blur(5px);
+}
+
+.cover-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: hsla(31, 55%, 10%, 0.35); */
+  z-index: 0;
+}
+
+.homepage-tagline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  /* color: white; */
+  width: 100%;
+}
+
+.homepage-tagline h2 {
   font-family: "Merriweather", serif;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: #5a3e36; /* Dark brown color */
+  /* color: #5a3e36;  */
+  /* color: #eee7e5; */
+  color: #ddb892;
 }
 
-.HomePage h3 {
+.homepage-tagline h3 {
   font-family: "Dancing Script", cursive;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: #5a3e36; /* Dark brown color */
+  font-size: 2.5rem;
+  /* margin-bottom: 1rem; */
+  /* color: #5a3e36; */
+  color: #ddb892;
 }
 
-.HomePage h4 {
+.homepage-tagline h4 {
   font-family: "Merriweather", serif;
-  margin-top: 2rem;
-  color: #5a3e36; /* Dark brown color */
+  font-size: 1.1rem;
+  margin-top: 3rem;
+  font-weight: 400;
+  color: #e9dfd5;
+}
+
+.homepage-tagline p {
+  font-family: "Merriweather", serif;
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: #e9dfd5;
 }
 
 .buttons-wrapper {

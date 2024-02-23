@@ -1,68 +1,65 @@
 .RecipeFormPage {
-  margin-left: 300px; /* This should match the width of your sidebar */
+  margin-left: 400px; /* Adjusted to fit alongside your sidebar */
   padding-top: calc(
-    var(--navbar-height) + 0.5rem
-  ); /* This should match the height of your navbar */
-  padding-left: 1rem; /* Add some space between the sidebar and the content */
-  padding-right: 1rem; /* Add some space on the right side */
+    var(--navbar-height) + 2rem
+  ); /* Height of navbar plus some space */
+  padding-left: 1rem; /* Space from the sidebar */
+  padding-right: 1rem; /* Space from the right side of the viewport */
   padding-bottom: 1rem; /* Space at the bottom */
 }
 
-.RecipeFormPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center the content */
-  margin-left: 300px;
-  padding-top: var(--navbar-height);
-  padding: 1rem;
-}
-
 .RecipeFormPage h2 {
-  margin-bottom: 1rem;
+  color: #5a3e36; /* Modern color for heading */
+  text-align: center; /* Center the heading */
+  margin-bottom: 1.5rem; /* Space below the heading */
 }
 
 .RecipeFormPage form {
-  width: 100%; /* Full width of the component */
-  max-width: 600px; /* Max width of the form */
-  background: #fff8f0;
+  width: 90%; /* Form width increased to take more space */
+  max-width: 800px; /* Maximum width increased */
+  margin: 0 auto; /* Centers the form */
+  background: #ffffff; /* Clean white background */
   padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
   border-radius: 8px;
 }
 
 .RecipeFormPage input[type="text"],
 .RecipeFormPage input[type="number"],
 .RecipeFormPage textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.RecipeFormPage fieldset {
-  margin-bottom: 1rem;
-}
-
-.RecipeFormPage legend {
-  margin-bottom: 0.5rem;
-}
-
-.RecipeFormPage label {
-  display: block;
-  margin-bottom: 0.5rem;
+  width: calc(100%); /* Subtract padding from total width */
+  padding: 1rem; /* Comfortable padding inside the inputs */
+  margin-bottom: 1rem; /* Space between inputs */
+  border: 2px solid #ccc; /* Solid border with a modern light color */
+  border-radius: 25px; /* Rounded borders for inputs */
+  box-sizing: border-box; /* Border and padding included in width */
 }
 
 .RecipeFormPage button {
-  background-color: #ac6f4e; /* Your theme color */
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
+  background-color: #eae0d5; /* Light, neutral button background */
+  color: #5a3e36; /* Text color that contrasts with the button background */
+  border: none; /* No border for a modern button appearance */
+  padding: 1rem; /* Comfortable padding inside the button */
+  border-radius: 25px; /* Rounded corners for the button */
+  cursor: pointer; /* Hand cursor on hover */
+  width: 100%; /* Button width fills its container */
+  box-sizing: border-box; /* Border and padding included in width */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .RecipeFormPage button:hover {
-  background-color: #8a5643; /* Darker shade for hover effect */
+  background-color: #ddb892; /* Darker shade for the button on hover */
+  color: white; /* Optional: Change text color on hover */
+}
+
+.RecipeFormPage fieldset {
+  display: flex;
+  flex-direction: column; /* Align family items in a column */
+  width: 100%; /* Match the width to the fieldset */
+  margin-top: 1rem;
+  margin-bottom: 2rem; /* Space from the last form field */
+}
+
+.RecipeFormPage .family-item {
+  margin-bottom: 1rem;
 }

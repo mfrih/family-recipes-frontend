@@ -40,7 +40,9 @@ const AddFamily = () => {
           />
         </div>
         <div>
-          <label htmlFor="avatar">Add a picture of your family</label>
+          <label htmlFor="avatar">
+            Add a picture of your family (coming soon)
+          </label>
           <input
             type="text"
             value={formState.avatar}

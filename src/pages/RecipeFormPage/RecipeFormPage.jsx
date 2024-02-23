@@ -96,7 +96,7 @@ const RecipeFormPage = ({ type }) => {
 
   return (
     <div className="RecipeFormPage">
-      <h2>{type === "add" ? "Create" : "Update"} a new recipe 👩🏾‍🍳</h2>
+      <h2>{type === "add" ? "Create" : "Update"} a new recipe</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -118,7 +118,7 @@ const RecipeFormPage = ({ type }) => {
           id="ingredients"
           onChange={handleChange}
           value={formState.ingredients}
-          placeholder="List of ingredients - do not hesitate to use bullet points to separate them."
+          placeholder="List of ingredients"
           rows="20"
           cols="100"
           required
@@ -127,7 +127,7 @@ const RecipeFormPage = ({ type }) => {
           id="instructions"
           onChange={handleChange}
           value={formState.instructions}
-          placeholder="List of ingredients - do not hesitate to use bullet points to separate them."
+          placeholder="List of instructions"
           rows="20"
           cols="100"
           required
@@ -135,7 +135,7 @@ const RecipeFormPage = ({ type }) => {
         <fieldset>
           <legend>Wanna share you recipe with your family/families?</legend>
           {families.map((family) => (
-            <label key={family._id}>
+            <label className="family-item" key={family._id}>
               <input
                 type="checkbox"
                 id={family._id}

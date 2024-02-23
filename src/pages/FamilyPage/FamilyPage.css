@@ -1,6 +1,6 @@
 .FamilyPage {
-  margin-left: 300px; /* Sidebar width */
-  padding-top: calc(var(--navbar-height) + 1rem); /* Navbar height plus some */
+  margin-left: 400px; /* Sidebar width */
+  padding-top: calc(var(--navbar-height) + 2rem); /* Navbar height plus some */
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;

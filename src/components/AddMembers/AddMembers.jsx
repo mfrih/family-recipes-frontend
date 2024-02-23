@@ -38,7 +38,10 @@ const AddMembers = ({ family, isAdmin, setFamily }) => {
 
   return (
     <div className="AddMembers">
-      <h2>Add Members to your family</h2>
+      <h3>
+        Add Members to your family
+        <span> (you see this because you're admin of this family)</span>
+      </h3>
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -52,7 +55,12 @@ const AddMembers = ({ family, isAdmin, setFamily }) => {
         {searchResults.map((user) => (
           <li key={user._id}>
             {user.username} ({user.email})
-            <button onClick={() => handleAddMember(user._id)}>Add</button>
+            <button
+              className="add-member-button"
+              onClick={() => handleAddMember(user._id)}
+            >
+              ⨁
+            </button>
           </li>
         ))}
       </ul>

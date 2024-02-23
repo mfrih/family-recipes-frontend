@@ -1,21 +1,42 @@
 .OneFamilyCard {
   text-decoration: none;
   color: inherit; /* Take color from parent */
-  display: block; /* Allows the link to take up the full area of the card */
-  background-color: #fff8f0; /* Slightly off-white for family cards */
+  display: flex; /* Updated to use Flexbox */
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
+  background-color: rgb(247, 239, 231);
   padding: 1rem;
-  border-radius: 50%; /* Fully rounded corners for a circle */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 0.5rem;
-  width: 200px; /* Fixed size for a circle */
-  height: 200px; /* Fixed size for a circle */
-  display: flex; /* Center content using flexbox */
-  align-items: center; /* Vertically center */
-  justify-content: center; /* Horizontally center */
+  border-radius: 8px; /* Rounded corners for the card */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  width: 200px; /* Set a fixed width smaller than the height */
+  height: 250px; /* Set a height taller than the width to make the card vertical */
+  margin: 0.5rem; /* Provide some space around the card */
+  flex: 0 0 auto; /* Do not grow, do not shrink, auto basis based on width and height */
   box-sizing: border-box; /* Include padding and border in the width */
-  overflow: hidden; /* Ensures no content spills out of the border radius */
+  box-shadow: rgba(221, 184, 146, 0.4) 5px 5px,
+    rgba(221, 184, 146, 0.3) 10px 10px, rgba(221, 184, 146, 0.2) 15px 15px,
+    rgba(221, 184, 146, 0.1) 20px 20px, rgba(221, 184, 146, 0.05) 25px 25px;
 }
 
-.OneFamilyCard h3 {
+.OneFamilyCard h4 {
+  font-family: "Amatic SC", cursive;
   text-align: center;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0;
 }
+
+.OneFamilyCard:hover {
+  background-color: #ddb892;
+}
+
+/* .OneFamilyCard h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+  font-family: "Dancing Script", cursive;
+}
+
+.OneFamilyCard p {
+  margin: 0;
+  font-size: 0.8rem;
+} */

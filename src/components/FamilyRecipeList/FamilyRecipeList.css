@@ -1,4 +1,4 @@
-.FamilyRecipeList {
+.recipe-card-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -6,6 +6,6 @@
   width: 100%;
 }
 
-.FamilyRecipeList h2 {
-  margin-bottom: 1rem; /* Space below the title */
+.FamilyRecipeList h3 {
+  margin-bottom: 1.5rem; /* Space below the title */
 }

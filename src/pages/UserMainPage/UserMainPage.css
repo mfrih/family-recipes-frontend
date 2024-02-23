@@ -1,36 +1,44 @@
 .UserMainPage {
-  margin-left: 300px; /* This should match the width of your sidebar */
+  margin-left: 400px; /* This should match the width of your sidebar */
   padding-top: calc(
-    var(--navbar-height) + 0.5rem
+    var(--navbar-height) + 2rem
   ); /* This should match the height of your navbar */
   padding-left: 1rem; /* Add some space between the sidebar and the content */
   padding-right: 1rem; /* Add some space on the right side */
   padding-bottom: 1rem; /* Space at the bottom */
 }
 
+.welcome-user img {
+  max-height: 2.7rem;
+}
+
 /* Styling for the section headers with the title and button */
 .section-header {
   display: flex;
-  justify-content: space-between; /* Aligns the title to the left and the button to the right */
+  justify-content: flex-start; /* Aligns the title to the left and the button to the right */
+  gap: 1.5rem;
   align-items: center; /* Centers items vertically */
-  margin-bottom: 1rem; /* Space below the header */
+  margin-bottom: 2rem; /* Space below the header */
 }
 
 .add-button {
   background-color: #eae0d5; /* Neutral color for the button */
-  border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem;
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
+.add-button:hover {
+  background-color: #ddb892;
+}
 .add-button a {
   text-decoration: none;
   color: #5a3e36; /* Dark brown text to match the sidebar */
 }
 .my-families-wrapper {
-  margin-bottom: 3rem; /* Increased space between sections */
+  margin-bottom: 5rem; /* Increased space between sections */
 }
 
 /* Styling for the family and recipe cards */

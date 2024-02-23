@@ -23,14 +23,20 @@ function SideBar() {
     <div className="SideBar">
       <aside>
         <Link to={"/welcome"}>
-          <h4>🛖 Home</h4>
+          <h4>
+            <img src="/iconmonstr-home-1-16.png" /> Home
+          </h4>
         </Link>
         <Link to={"/recipes/search"}>
-          <h4>🔎 Search for recipes</h4>
+          <h4>
+            <img src="/iconmonstr-magnifier-3-16.png" /> Search for recipes
+          </h4>
         </Link>
         <hr />
         <div>
-          <h4>📒 Your Family Recipe Books</h4>
+          <h4>
+            <img src="/iconmonstr-book-28-16.png" /> Your Family Recipe Books
+          </h4>
           {families.length > 0 ? (
             families.map((family) => (
               <Link to={`/my-families/${family._id}`} key={family._id}>
@@ -50,12 +56,16 @@ function SideBar() {
         <hr />
         <Link to={"/recipes/generated-by-MametteAI"}>
           <h4>
-            🪄 Need Inspiration, let Mamette<sup>AI</sup> help you!
+            <img src="/iconmonstr-magic-1-16.png" /> Need Inspiration, let
+            Mamette<sup>AI</sup> help you!
           </h4>
         </Link>
         <hr />
         <Link to={"/my-recipes"}>
-          <h4> 👩🏾‍🍳 My Recipes, coming soon...</h4>
+          <h4>
+            {" "}
+            <img src="/iconmonstr-cook-1-16.png" /> My Recipes, coming soon...
+          </h4>
         </Link>
       </aside>
     </div>

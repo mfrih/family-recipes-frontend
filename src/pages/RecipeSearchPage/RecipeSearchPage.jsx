@@ -19,16 +19,29 @@ const RecipeSearch = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="RecipeSearchPage">
-      <input
-        type="text"
-        placeholder="Search for recipes..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-
+      <h2>What would like to eat?</h2>
+      <p>
+        Have an ingredient in mind? The name of a recipe? Our powerful search
+        will look into all the recipes you have access to...
+      </p>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search for recipes..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
       <div className="search-results">
         {recipes.map((recipe) => (
           <OneRecipeCard key={recipe._id} recipe={recipe} />
