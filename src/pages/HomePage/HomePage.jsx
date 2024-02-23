@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <div className="HomePage">
       <div className="cover-image">
-        <img src="../../../public/pexels-askar-abayev-5638732.jpg" alt="" />
+        <img src="/pexels-askar-abayev-5638732.jpg" alt="" />
         <div className="homepage-tagline">
           <h2>Welcome to Cassoles & Tajines</h2>
           <h3>A place where every flavor tells a story.</h3>
