@@ -1,6 +1,6 @@
 .OneRecipePage {
-  margin-left: 300px; /* Adjust if your sidebar width is different */
-  padding-top: var(--navbar-height);
+  margin-left: 400px; /* Adjust if your sidebar width is different */
+  padding-top: var(--navbar-height) + 2rem;
   padding: 2rem;
   max-width: 800px; /* Limit the content width for better readability */
   margin: var(--navbar-height) auto 0 auto; /* Center the content vertically and respect the navbar height */
@@ -9,25 +9,35 @@
   border-radius: 8px; /* Optional: round corners */
 }
 
-.OneRecipePage h2,
+.OneRecipePage h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+}
 .OneRecipePage h4 {
   color: #5a3e36; /* A warm, dark brown */
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
 .OneRecipePage button {
-  background-color: #ac6f4e;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem; /* Space between buttons if both are visible */
-  border-radius: 5px;
+  background-color: #eae0d5; /* Neutral color for the button */
+  padding: 0.3rem;
+  border-radius: 4px;
   cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .OneRecipePage button:hover {
-  background-color: #8a5643; /* Darken button on hover */
+  background-color: #ddb892;
 }
 
+.recipe-header a {
+  text-decoration: none;
+  color: #5a3e36;
+}
 .OneRecipePage p,
 .OneRecipePage ul {
   padding-left: 1rem; /* Indent text for better readability */
@@ -52,10 +62,4 @@
 .recipe-buttons {
   display: flex;
   gap: 0.5rem; /* Add space between buttons */
-}
-
-/* You might want to adjust button styling as well */
-.OneRecipePage button {
-  /* Existing styles */
-  margin: 0; /* Remove margin to prevent layout shift */
 }
