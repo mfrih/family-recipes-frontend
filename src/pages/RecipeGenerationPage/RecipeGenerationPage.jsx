@@ -75,7 +75,7 @@ function RecipeGenerationPage() {
     <div className="RecipeGenerationPage">
       <div className="recipe-gen-intro">
         <h2>Let our wonderful Mamette make the perfect recipe for you!</h2>
-        <span className="mamette-emoji">👵🏼</span>
+        <span className="mamette-emoji">👵🏼 </span>
         <quote className="mamette-quote">
           "Hi I'm Mamette. So tell me what do you fancy and I'll try and imagine
           the tastiest recipe for you. Well I'm Franco-Moroccan so my recipes
@@ -87,7 +87,7 @@ function RecipeGenerationPage() {
           <h3>Alors on mange quoi ?</h3>
           <div className="all-sliders">
             <Slider
-              label="Sain (...pourtantle gras c'est la vie pourtant)"
+              label="Sain (...pourtant le gras c'est la vie !)"
               value={healthyValue}
               onChange={handleHealthyChange}
             />
@@ -107,20 +107,20 @@ function RecipeGenerationPage() {
               onChange={handleMoroccanChange}
             />
             <Slider
-              label="Épicé (...si tu choisis 10, ce sera bien bien pimenté)"
+              label="Épicé"
               value={spicyValue}
               onChange={handleSpicyChange}
             />
 
             <Slider
-              label="Végétarien (...eh oui, j'évolue moi aussi)"
+              label="Végétarien"
               value={vegetarianValue}
               onChange={handleVegetarianChange}
             />
           </div>
           <div className="generation-button">
             <button onClick={handleRecipeGeneration} disabled={isLoading}>
-              Eh Mamette, t'aurais pas une petite recette pour moi !
+              Allez, une petite recette pour moi !
             </button>
           </div>
         </div>

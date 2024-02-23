@@ -11,7 +11,7 @@
 }
 
 .recipe-gen-intro h2 {
-  font-family: "Ysabeau SC", sans-serif;
+  font-family: "Lora", cursive;
   font-weight: 700;
   font-size: 1.8rem;
   text-align: center;
@@ -24,15 +24,15 @@
 }
 
 .recipe-gen-intro quote {
-  font-family: "Ysabeau SC", sans-serif;
-  font-size: 1.3rem;
-  font-style: italic;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.7rem;
 }
 
 .recipe-generation-wrapper {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  margin-top: 2erem;
   margin-bottom: 5rem;
   & > * {
     width: 40%;

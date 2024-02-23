@@ -27,7 +27,7 @@ const RecipeSearch = () => {
 
   return (
     <div className="RecipeSearchPage">
-      <h2>What would like to eat?</h2>
+      <h2>What would you like to eat?</h2>
       <p>
         Have an ingredient in mind? The name of a recipe? Our powerful search
         will look into all the recipes you have access to...

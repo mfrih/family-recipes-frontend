@@ -34,11 +34,15 @@
   background-color: #ddb892;
 }
 
-.recipe-header a {
+.recipe-buttons button {
   text-decoration: none;
   color: #5a3e36;
 }
-.OneRecipePage p,
+.OneRecipePage p {
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
 .OneRecipePage ul {
   padding-left: 1rem; /* Indent text for better readability */
 }

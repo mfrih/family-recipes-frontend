@@ -78,7 +78,7 @@ function OneRecipePage() {
           )}
         </div>
       </div>
-      <p>Servings:for {recipe.servings} people</p>
+      <p>Servings: for {recipe.servings} people</p>
       <div>
         <h4>Ingredients</h4>
         <ul>{formatListItems(recipe.ingredients)}</ul>
